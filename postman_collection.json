@@ -1,0 +1,83 @@
+{
+    "info": {
+      "name": "Sensor API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Store Measurement",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{base_url}}/api/v1/sensors/{{uuid}}/measurements",
+            "host": ["{{base_url}}"],
+            "path": ["api", "v1", "sensors", "{{uuid}}", "measurements"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"co2\": 1000,\n    \"time\": \"2023-04-20T12:00:00Z\"\n}"
+          }
+        }
+      },
+      {
+        "name": "Get Sensor Status",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "{{base_url}}/api/v1/sensors/{{uuid}}",
+            "host": ["{{base_url}}"],
+            "path": ["api", "v1", "sensors", "{{uuid}}"]
+          }
+        }
+      },
+      {
+        "name": "Get Sensor Metrics",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "{{base_url}}/api/v1/sensors/{{uuid}}/metrics",
+            "host": ["{{base_url}}"],
+            "path": ["api", "v1", "sensors", "{{uuid}}", "metrics"]
+          }
+        }
+      },
+      {
+        "name": "Get Sensor Alerts",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "{{base_url}}/api/v1/sensors/{{uuid}}/alerts",
+            "host": ["{{base_url}}"],
+            "path": ["api", "v1", "sensors", "{{uuid}}", "alerts"]
+          }
+        }
+      },
+      {
+        "name": "Get All Sensors",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "{{base_url}}/api/v1/sensors",
+            "host": ["{{base_url}}"],
+            "path": ["api", "v1", "sensors"]
+          }
+        }
+      }
+    ],
+    "variable": [
+      {
+        "key": "base_url",
+        "value": "http://localhost:8000"
+      },
+      {
+        "key": "uuid",
+        "value": "test-uuid"
+      }
+    ]
+  }
